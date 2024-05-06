@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import QrScanner from 'react-qr-scanner';
+import "./qr-scan.css"
 
 function QRScannerComponent() {
   const [result, setResult] = useState('');
 
   const handleError = (error) => {
     console.error(error);
+    setResult('Hubo un error');
   }
 
   const handleScan = (data) => {
@@ -16,7 +18,8 @@ function QRScannerComponent() {
   }
 
   return (
-    <div>
+    <div className='todo'>
+      <h1>Escaneá tu QR</h1>
       <QrScanner
         delay={300}
         onError={handleError}

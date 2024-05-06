@@ -1,12 +1,12 @@
 import QRScannerComponent from "./components/qr-scan";
+import Login from "./components/login";
 import "./App.css";
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hola</h1>
-      <QRScannerComponent />
+    <div className="App" style={{backgroundColor: 'black'}}>
+      <Login />
     </div>
   );
 }
