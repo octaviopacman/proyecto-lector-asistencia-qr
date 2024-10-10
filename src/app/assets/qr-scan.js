@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { useEffect, useState } from 'react';
 import QrScanner from 'react-qr-scanner';
 import "./qr-scan.css";
@@ -7,7 +7,7 @@ function QRScannerComponent() {
   const [result, setResult] = useState('');
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const URI = "http://127.0.0.1:8000/login/asistencia";
+  const URI = "https://backend-asistencia-qr.vercel.app/api/login/asistencia";
 
   const handleError = (error) => {
     console.error(error);

@@ -1,34 +1,37 @@
-'use client'
-import React, { useState } from 'react';
-import styles from './login.module.css';
-import { Link, Navigate } from 'next/router';
-import QRScannerComponent from '../assets/qr-scan';
+'use client'; // Asegurarse de que este componente es estrictamente del lado del cliente
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation'; // App Router para navegación
+import QRScannerComponent from '../assets/qr-scan'; // Asegúrate de que este componente solo use código del cliente
 import Image from 'next/image';
+import styles from './login.module.css';
 
 function Login() {
-  const [correo, setcorreo] = useState('');
+  const [correo, setCorreo] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [irARegistro, setIrARegistro] = useState(false);
   const [Sesion, setSesion] = useState(false);
-  const [codigo, setCodigo] = useState('');
+  const router = useRouter();
 
+  // Funciones que dependen del cliente (navegación, interacciones con el DOM) 
   if (Sesion) {
-    return <Navigate to="/admin" />;
+    router.push('/admin');
   }
 
   if (irARegistro) {
-    return <Navigate to="/registro" />;
+    router.push('/registro');
   }
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
+    // Aquí puedes implementar la lógica de autenticación o validaciones
   };
 
   return (
     <div className={styles.Todo}>
       <div className={styles.loginManual}>
-        <Image src='https://github.com/octaviopacman/proyecto-lector-asistencia-qr/blob/main/src/app/public/appicon.png' width={30} height={30} alt="App Icon" />
+        <Image src='/appicon.png' width={30} height={30} alt="App Icon" />
         <h1>Asistencia QR</h1>
         <form onSubmit={handleLogin}>
           <div>
@@ -37,7 +40,7 @@ function Login() {
               type="text"
               className={styles.inputField}
               value={correo}
-              onChange={(e) => setcorreo(e.target.value)}
+              onChange={(e) => setCorreo(e.target.value)}
             />
           </div>
           <div>
@@ -53,7 +56,7 @@ function Login() {
         </form>
         <p>{message}</p>
         <div className={styles.codigo}>
-          {codigo}
+          {/** Aquí podrías agregar otro componente si es necesario */}
         </div>
         <button className={styles.boton} onClick={() => setIrARegistro(!irARegistro)}>Registro</button>
       </div>
