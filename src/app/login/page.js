@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import styles from './login.module.css';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'next/router';
 import QRScannerComponent from '../assets/qr-scan';
 import Image from 'next/image';
 
@@ -28,7 +28,7 @@ function Login() {
   return (
     <div className={styles.Todo}>
       <div className={styles.loginManual}>
-        <Image src='public/appicon.png' width={30} height={30} alt="App Icon" />
+        <Image src='https://github.com/octaviopacman/proyecto-lector-asistencia-qr/blob/main/src/app/public/appicon.png' width={30} height={30} alt="App Icon" />
         <h1>Asistencia QR</h1>
         <form onSubmit={handleLogin}>
           <div>
