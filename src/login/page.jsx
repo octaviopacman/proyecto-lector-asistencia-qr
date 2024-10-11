@@ -1,9 +1,8 @@
-'use client'; // Asegurarse de que este componente es estrictamente del lado del cliente
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation'; // App Router para navegación
-import QRScannerComponent from '../assets/qr-scan'; // Asegúrate de que este componente solo use código del cliente
-import Image from 'next/image';
+
+import QRScannerComponent from '../assets/components/qr-scan'; // Asegúrate de que este componente solo use código del cliente
+
 import styles from './login.module.css';
 
 function Login() {
@@ -12,16 +11,10 @@ function Login() {
   const [message, setMessage] = useState('');
   const [irARegistro, setIrARegistro] = useState(false);
   const [Sesion, setSesion] = useState(false);
-  const router = useRouter();
+  
 
   // Funciones que dependen del cliente (navegación, interacciones con el DOM) 
-  if (Sesion) {
-    router.push('/admin');
-  }
-
-  if (irARegistro) {
-    router.push('/registro');
-  }
+  
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,9 +24,9 @@ function Login() {
   return (
     <div className={styles.Todo}>
       <div className={styles.loginManual}>
-        <Image src='/appicon.png' width={30} height={30} alt="App Icon" />
+        <img src='/appicon.png' width={30} height={30} alt="App Icon" />
         <h1>Asistencia QR</h1>
-        <form onSubmit={handleLogin}>
+        <form >
           <div>
             <label>Correo:</label><br />
             <input

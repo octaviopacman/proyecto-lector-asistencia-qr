@@ -1,4 +1,4 @@
-"use client"
+
 import React, { useEffect, useState } from 'react';
 import QrScanner from 'react-qr-scanner';
 import "./qr-scan.css";
