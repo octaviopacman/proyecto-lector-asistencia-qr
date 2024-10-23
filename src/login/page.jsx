@@ -24,7 +24,7 @@ function Login() {
   return (
     <div className={styles.Todo}>
       <div className={styles.loginManual}>
-        <img src='/appicon.png' width={30} height={30} alt="App Icon" />
+        <img src='assets/appicon.png' width={30} height={30} alt="App Icon" />
         <h1>Asistencia QR</h1>
         <form >
           <div>
