@@ -28,7 +28,8 @@ function QRScannerComponent() {
           const response = await fetch(URI, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + result
             },
             body: JSON.stringify({
               qrToken: result
