@@ -62,7 +62,6 @@ function QRScannerComponent() {
           className="qr-scanner"
         />
       </div>
-      <p>Resultado: {result}</p>
       {error && <p>Error: {error.message}</p>}
       {data && <p>Data: {JSON.stringify(data)}</p>}
     </div>
