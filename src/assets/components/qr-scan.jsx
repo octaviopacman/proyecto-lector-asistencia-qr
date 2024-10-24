@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import QrScanner from 'react-qr-scanner';
 import "./qr-scan.css";
@@ -38,7 +37,7 @@ function QRScannerComponent() {
 
           if (!response.ok) {
             const errorData = await response.json();
-            throw new Error(errorData.message ||'ERROR AL PROCESAR LA SOLICITUD');
+            throw new Error(errorData.message || 'ERROR AL PROCESAR LA SOLICITUD');
           }
 
           const jsonData = await response.json();
@@ -55,12 +54,14 @@ function QRScannerComponent() {
   return (
     <div className='todo'>
       <h1>Escaneá tu QR</h1>
-      <QrScanner
-        delay={300}
-        onError={handleError}
-        onScan={handleScan}
-        style={{ width: '100%' }}
-      />
+      <div className="qr-scanner-container">
+        <QrScanner
+          delay={300}
+          onError={handleError}
+          onScan={handleScan}
+          className="qr-scanner"
+        />
+      </div>
       <p>Resultado: {result}</p>
       {error && <p>Error: {error.message}</p>}
       {data && <p>Data: {JSON.stringify(data)}</p>}
