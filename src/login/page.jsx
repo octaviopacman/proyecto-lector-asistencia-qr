@@ -18,7 +18,7 @@ function Login() {
     <div className={styles.loginContainer}>
       <div className={styles.loginContent}>
         <div className={styles.loginBox}>
-          <img src='./public/appicon.png' className={styles.loginIcon} alt="App Icon" />
+          <img src='appicon.png' className={styles.loginIcon} alt="App Icon" />
           <h1>Asistencia QR</h1>
           <form onSubmit={handleLogin} className={styles.loginForm}>
             <div className={styles.formGroup}>
