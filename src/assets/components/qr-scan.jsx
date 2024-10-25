@@ -63,7 +63,7 @@ function QRScannerComponent() {
         />
       </div>
       {error && <p>Error: {error.message}</p>}
-      {data && <p>Data: {data.message}</p>}
+      {data && <p>{data.message}</p>}
     </div>
   );
 }
