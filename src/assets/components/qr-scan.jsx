@@ -6,7 +6,7 @@ function QRScannerComponent() {
   const [result, setResult] = useState('');
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const URI = "https://backend-asistencia-qr.vercel.app/api/login/asistencia";
+  const URI = "https://backend-asistencia-qr.vercel.app/api/profesor/login/asistencia";
 
   const handleError = (error) => {
     console.error(error);
