@@ -5,7 +5,10 @@ import "./qr-scan.css";
 function QRScannerComponent() {
   const [result, setResult] = useState('');
   const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({
+    message: '',
+    nuevaAsistencia: {}
+  });
   const URI = "https://backend-asistencia-qr.vercel.app/api/profesor/login/asistencia";
 
   const handleError = (error) => {
@@ -63,7 +66,7 @@ function QRScannerComponent() {
         />
       </div>
       {error && <p>Error: {error.message}</p>}
-      {data && <p>{data.message}</p>}
+      {data && <p>{data.message} a las {data.nuevaAsistencia.horallegada} el dia {data.nuevaAsistencia.fecha}</p>}
     </div>
   );
 }
