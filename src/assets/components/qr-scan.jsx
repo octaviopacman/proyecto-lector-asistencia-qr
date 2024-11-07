@@ -66,7 +66,13 @@ function QRScannerComponent() {
         />
       </div>
       {error && <p>Error: {error.message}</p>}
-      {data && <p>{data.message} a las {data.nuevaAsistencia.horallegada} el dia {data.nuevaAsistencia.fecha}</p>}
+      {data && (
+        <p>
+          {data.message}
+          {data.nuevaAsistencia.horallegada && ` a las ${data.nuevaAsistencia.horallegada}`}
+          el día {data.nuevaAsistencia.fecha}
+        </p>
+      )}
     </div>
   );
 }
