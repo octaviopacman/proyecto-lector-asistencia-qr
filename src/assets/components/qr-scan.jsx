@@ -56,7 +56,7 @@ function QRScannerComponent() {
 
   const ajustarHora = (hora) => {
     const fechaHora = new Date(`1970-01-01T${hora}Z`); // Convierte la hora a un objeto Date en UTC
-    fechaHora.setHours(fechaHora.getHours() - 3); // Resta 3 horas
+    fechaHora.setHours(fechaHora.getHours() - 1); // Resta 3 horas
     return fechaHora.toTimeString().slice(0, 5); // Devuelve la hora ajustada en formato HH:MM
   };
 
