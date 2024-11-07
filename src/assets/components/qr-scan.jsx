@@ -69,8 +69,8 @@ function QRScannerComponent() {
       {data && (
         <p>
           {data.message}
-          {data.nuevaAsistencia.horallegada && ` a las ${data.nuevaAsistencia.horallegada}`}
-          el día {data.nuevaAsistencia.fecha}
+          {data.nuevaAsistencia.horallegada && ` a las ${data.nuevaAsistencia.horallegada} el día `}
+          {data.nuevaAsistencia.fecha}
         </p>
       )}
     </div>
